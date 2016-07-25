@@ -1,0 +1,12 @@
+{
+	"name":        "redux-yoyo-todomvc",
+	"description": "An example of how to use Redux & yo-yo together.",
+	"version":     "0.1.0",
+	"main":        "index.js",
+	"keywords":    ["redux", "yo-yo", "yoyo", "reselect", "frontend"],
+	"author":      "Jannis R <mail@jannisr.de>",
+	"homepage":    "https://github.com/derhuerst/redux-yoyo-todomvc",
+	"repository":  "derhuerst/redux-yoyo-todomvc",
+	"issues":      "https://github.com/derhuerst/redux-yoyo-todomvc/issues",
+	"license":     "ISC"
+}
