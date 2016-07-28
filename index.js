@@ -6,7 +6,7 @@ const yo = require('yo-yo')
 
 const bindActions = require('./actions')
 const reducer = require('./reducer')
-const ui = require('./ui')
+const ui = require('./ui/index')
 
 
 
