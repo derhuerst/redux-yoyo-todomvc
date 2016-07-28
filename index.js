@@ -14,10 +14,10 @@ const store = createStore(reducer)
 const actions = bindActions(store.dispatch)
 
 const render = ui(actions)
-const dom = document.body.appendChild(render(store.getState()))
+const dom = render(store.getState())
+document.body.appendChild(dom)
 
 store.subscribe(() => {
 	const state = store.getState()
-	console.log('state', state)
 	yo.update(dom, render(state))
 })

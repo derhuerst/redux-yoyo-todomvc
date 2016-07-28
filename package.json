@@ -8,5 +8,15 @@
 	"homepage":    "https://github.com/derhuerst/redux-yoyo-todomvc",
 	"repository":  "derhuerst/redux-yoyo-todomvc",
 	"issues":      "https://github.com/derhuerst/redux-yoyo-todomvc/issues",
-	"license":     "ISC"
+	"license":     "ISC",
+	"devDependencies": {
+		"redux": "^3.5.2",
+		"reselect": "^2.5.3",
+		"yo-yo": "^1.2.2",
+
+		"browserify": "^13.0.1"
+	},
+	"scripts": {
+		"build": "browserify index.js -o bundle.js"
+	}
 }

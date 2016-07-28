@@ -5,7 +5,6 @@ const combineReducers = require('redux/lib/combineReducers').default
 
 
 const todosReducer = (todos = [], action) => {
-	console.log('action', action)
 
 	if (action.type === 'add-todo')
 		return todos.concat([{text: action.text, finished: false}])
