@@ -9,6 +9,9 @@ const todosReducer = (todos = [], action) => {
 	if (action.type === 'add-todo')
 		return todos.concat([{text: action.text, finished: false}])
 
+	if (action.type === 'remove-todo')
+		return todos.filter((_, i) => i !== action.index)
+
 	if (action.type === 'finish-todo')
 		return todos.map((todo, index) =>
 			index === action.index

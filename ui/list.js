@@ -5,21 +5,23 @@ const yo = require('yo-yo')
 
 
 
-const row = (finishTodo, unfinishTodo) => (todo, index) => {
-	const onClick = todo.finished
+const row = (finishTodo, unfinishTodo, removeTodo) => (todo, index) => {
+	const toggle = todo.finished
 		? () => unfinishTodo(index)
 		: () => finishTodo(index)
+	const remove = () => removeTodo(index)
 	return yo `
 		<li>
 			<input type="checkbox"
 				${todo.finished ? 'checked' : ''}
-				onclick=${onClick}/>
+				onclick=${toggle}/>
 			<span>${todo.text}</span>
+			<button onclick=${remove}>remove</button>
 		</li>`
 }
 
-const render = (todos, finishTodo, unfinishTodo) => yo `
-	<ul>${todos.map(row(finishTodo, unfinishTodo))}</ul>`
+const render = (todos, finish, unfinish, remove) => yo `
+	<ul>${todos.map(row(finish, unfinish, remove))}</ul>`
 
 
 
@@ -31,6 +33,6 @@ const list = (actions) => selector(
 			return state.todos.filter((todo) => todo.finished === false)
 		return state.todos
 	},
-	(list) => render(list, actions.finishTodo, actions.unfinishTodo)
+	(list) => render(list, actions.finishTodo, actions.unfinishTodo, actions.removeTodo)
 )
 module.exports = list

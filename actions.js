@@ -6,6 +6,8 @@ const bind = require('redux/lib/bindActionCreators').default
 
 const addTodo = (text) =>
 	({type: 'add-todo', text})
+const removeTodo = (index) =>
+	({type: 'remove-todo', index})
 
 const finishTodo = (index) =>
 	({type: 'finish-todo', index})
@@ -24,7 +26,7 @@ const showAllTodos = () => setFilter('all')
 
 
 module.exports = (dispatch) => bind({
-	addTodo,
+	addTodo, removeTodo,
 	finishTodo, unfinishTodo,
 	deleteTodo,
 	showUnfinishedTodos, showFinishedTodos, showAllTodos
