@@ -3,23 +3,23 @@
 const selector = require('reselect').createSelector
 const yo = require('yo-yo')
 
-const Add = require('./add')
-const List = require('./list')
-const Filters = require('./filters')
-const counter = require('./counter')
+const addComponent = require('./add')
+const listComponent = require('./list')
+const filtersComponent = require('./filters')
+const renderCounter = require('./counter')
 
 
 
 const ui = (actions) => {
-	const add = Add(actions)
-	const list = List(actions)
-	const filters = Filters(actions)
+	const renderAdd = addComponent(actions)
+	const renderList = listComponent(actions)
+	const renderFilters = filtersComponent(actions)
 	return (state) => yo `
 		<main>
-			${add(state)}
-			${list(state)}
-			${filters(state)}
-			${counter(state)}
+			${renderAdd(state)}
+			${renderList(state)}
+			${renderFilters(state)}
+			${renderCounter(state)}
 		</main>`
 }
 

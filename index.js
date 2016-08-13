@@ -1,7 +1,6 @@
 'use strict'
 
 const createStore = require('redux/lib/createStore').default
-const bind = require('redux/lib/bindActionCreators').bindActionCreators
 const yo = require('yo-yo')
 
 const bindActions = require('./actions')
